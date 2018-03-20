@@ -11,6 +11,11 @@ public class CustomerServiceImpl implements CustomerService {
 	// Below way to create instance needs to be replaced by Spring
 	private CustomerRepository customerRepository;
 
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		super();
+		this.customerRepository = customerRepository;
+	}
+
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}

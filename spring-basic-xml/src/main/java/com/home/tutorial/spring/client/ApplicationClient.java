@@ -13,7 +13,7 @@ public class ApplicationClient {
 		
 		@SuppressWarnings("resource")
 		ApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
-		CustomerService service = context.getBean("customerService", CustomerService.class);
+		CustomerService service = context.getBean("customerService", CustomerService.class); //Setter Injection
 		
 		System.out.println(service.findAll().get(0).getFirstName());
 	}

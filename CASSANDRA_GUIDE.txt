@@ -1,0 +1,33 @@
+CREATE TABLE "MARGIN"."MARGIN_PROCESS_STATUS" (
+	req_id text,
+	mid text,
+	status text,
+	PRIMARY KEY ((req_id, mid),status)
+);
+
+INSERT  INTO  "MARGIN_PROCESS_STATUS"  (req_id,  mid,  status)   VALUES   ('r1', 'm1', 'NOT_STARTED');
+INSERT  INTO  "MARGIN_PROCESS_STATUS"  (req_id,  mid,  status)   VALUES   ('r1', 'm2', 'NOT_STARTED');
+INSERT  INTO  "MARGIN_PROCESS_STATUS"  (req_id,  mid,  status)   VALUES   ('r2', 'm1', 'COMPLETE');
+INSERT  INTO  "MARGIN_PROCESS_STATUS"  (req_id,  mid,  status)   VALUES   ('r2', 'm2', 'COMPLETE')
+
+CREATE TABLE "MARGIN"."RDH" (
+	req_id text,
+	mid text,
+	value int,
+	PRIMARY KEY ((req_id, mid),value)
+);
+
+INSERT  INTO  "RDH"  (req_id,  mid,  value)   VALUES   ('r1', 'm1', 90);
+INSERT  INTO  "RDH"  (req_id,  mid,  value)   VALUES   ('r1', 'm2', 110);
+INSERT  INTO  "RDH"  (req_id,  mid,  value)   VALUES   ('r2', 'm1', 68);
+INSERT  INTO  "RDH"  (req_id,  mid,  value)   VALUES   ('r2', 'm2', 78);
+
+CREATE TABLE "MARGIN"."MARGIN_STATUS" (
+	req_id text,
+	mid text,
+	marginability_status text,
+	PRIMARY KEY (req_id, mid, marginability_status)
+);
+
+INSERT  INTO  "MARGIN_STATUS"  (req_id,  mid,  marginability_status)   VALUES   ('r2', 'm1', 'N');
+INSERT  INTO  "MARGIN_STATUS"  (req_id,  mid,  marginability_status)   VALUES   ('r2', 'm2', 'N');
